@@ -4,7 +4,7 @@ This guide summarizes **KMeans**, **Agglomerative Clustering**, and **DBSCAN**, 
 
 ---
 
-## 1️⃣ KMeans
+## 1️ KMeans
 
 **Hyperparameter:**  
 - `n_clusters = k` (number of clusters)
@@ -18,11 +18,10 @@ This guide summarizes **KMeans**, **Agglomerative Clustering**, and **DBSCAN**, 
 3. **Elbow method:** Plot inertia vs k → find the “elbow point” where adding more clusters **doesn’t reduce inertia much**.  
 4. Check silhouette score → pick k with higher silhouette (ideally > 0.5).
 
-✅ **Best k = elbow + high silhouette**
+**Best k = elbow + high silhouette**
 
 ---
-
-## 2️⃣ Agglomerative Clustering
+## 2️ Agglomerative Clustering
 
 **Hyperparameters:**  
 - `n_clusters = k`  
@@ -34,11 +33,11 @@ This guide summarizes **KMeans**, **Agglomerative Clustering**, and **DBSCAN**, 
 2. For each combination, compute **silhouette score**.  
 3. Pick the combination with **highest silhouette score**.  
 
-✅ **Best k = number of clusters with highest silhouette score**, and linkage method is chosen along with it.
+ **Best k = number of clusters with highest silhouette score**, and linkage method is chosen along with it.
 
 ---
 
-## 3️⃣ DBSCAN
+## 3️ DBSCAN
 
 **Hyperparameters:**  
 - `eps` = maximum distance between points in a cluster  
@@ -56,7 +55,7 @@ This guide summarizes **KMeans**, **Agglomerative Clustering**, and **DBSCAN**, 
    - Noise percentage is **low** (most points clustered)  
    - Number of clusters is reasonable (optional, e.g., similar to KMeans/AC)  
 
-✅ **Best eps & min_samples → high silhouette + low noise**  
+ **Best eps & min_samples → high silhouette + low noise**  
 
 > Unlike KMeans, DBSCAN **doesn’t require the number of clusters in advance**.
 
@@ -72,14 +71,10 @@ This guide summarizes **KMeans**, **Agglomerative Clustering**, and **DBSCAN**, 
 
 ---
 
-### 💡 Tips for DBSCAN
+###  Tips for DBSCAN
 
 - Too small `eps` → most points become noise → silhouette is undefined for them.  
 - Too big `eps` → clusters merge → silhouette drops.  
 - `min_samples` controls density → higher values require denser clusters.
 
----
 
-### Optional
-
-You can also create a **visual cheat sheet** showing how to decide best parameters for each method with example plots and diagrams.
